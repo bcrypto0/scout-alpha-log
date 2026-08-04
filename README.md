@@ -15,21 +15,23 @@ it rather than take my word for anything.
 Counted directly from `data/listing_events.jsonl` — rerun
 [`verify.mjs`](verify.mjs) yourself to reproduce every figure below.
 
+<!--STATS-->
 | | |
 |---|---|
-| Events logged | **3,654** |
-| Of which pre-listing config flips | **2,699** |
+| Events logged | **3,626** |
+| Of which pre-listing config flips | **2,671** |
 | Distinct tokens seen | **1,993** |
-| Period covered | **2026-05-02 → 2026-08-03** (94 days) |
+| Period covered | **2026-05-02 → 2026-08-03** (93 days) |
 | Average | ~39 events/day |
 | Polling interval | **300 s** (5 minutes), per exchange |
+| Published with a delay of | **24h** (the live feed is the paid product) |
 
 ### Coverage by source
 
 | Source | Events |
 |---|---|
 | `coin_config.mexc` | 1,232 |
-| `coin_config.gate` | 735 |
+| `coin_config.gate` | 707 |
 | `coinbase` | 561 |
 | `coin_config.kucoin` | 398 |
 | `coin_config.binance` | 334 |
@@ -38,6 +40,7 @@ Counted directly from `data/listing_events.jsonl` — rerun
 | `upbit` | 52 |
 | `binance` | 26 |
 | `bithumb` | 6 |
+<!--/STATS-->
 
 The `coin_config.*` sources are the pre-listing watcher (deposit/withdraw state
 transitions). The others are announcement feeds, which are *not* pre-listing —
