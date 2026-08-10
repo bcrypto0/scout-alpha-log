@@ -104,9 +104,9 @@ worthless and you should conclude that.
 **Step 2 needs data from outside this repository, and that is a real
 limitation.** The `coin_config.*` sources here (mexc, gate, kucoin, binance)
 barely overlap with the announcement sources here (coinbase, okx, bybit, upbit,
-bithumb), so joining the two inside this file matches almost nothing — I get
-exactly one usable pair out of 3,013 flags, and that one is a normalisation
-artifact. Take the coin and timestamp from a flagged row to that exchange's own
+bithumb), so joining the two inside this file matches almost nothing — across
+thousands of flags I found exactly one usable pair, and that one is a
+normalisation artifact. Take the coin and timestamp from a flagged row to that exchange's own
 announcements page instead. Broadening the announcement coverage to match the
 config coverage is the obvious next improvement to this log.
 
