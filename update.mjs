@@ -91,8 +91,26 @@ const rows = Object.entries(bySource)
   .join('\n');
 const coverage = ['| Source | Events |', '|---|---|', rows].join('\n');
 
+// The withdrawals-open share backs the README's definition section: an earlier
+// README claimed "deposits open while withdrawals stay closed" and 92% of the
+// published rows contradicted it. Keeping the corrective stat hardcoded would
+// recreate the same rot as the log grows — regenerate it with everything else.
+let preWOpen = 0;
+for (const line of kept) {
+  const r = JSON.parse(line);
+  if (r.payload?.is_pre_listing_signal === true && r.payload?.withdraw_enable === true) {
+    preWOpen += 1;
+  }
+}
+const wOpenPct = pre > 0 ? Math.round((100 * preWOpen) / pre) : 0;
+const wopenSentence =
+  `<!--WOPEN-->**${preWOpen.toLocaleString()} of ${pre.toLocaleString()} flagged rows ` +
+  `(${wOpenPct}%) have withdrawals open**<!--/WOPEN-->`;
+
 const block = `<!--STATS-->\n${table}\n\n### Coverage by source\n\n${coverage}\n<!--/STATS-->`;
-const readme = readFileSync(README, 'utf8').replace(
+const readme = readFileSync(README, 'utf8')
+  .replace(/<!--WOPEN-->[\s\S]*?<!--\/WOPEN-->/, wopenSentence)
+  .replace(
   /<!--STATS-->[\s\S]*<!--\/STATS-->/,
   block,
 );
