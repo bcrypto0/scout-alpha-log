@@ -18,10 +18,10 @@ Counted directly from `data/listing_events.jsonl` — rerun
 <!--STATS-->
 | | |
 |---|---|
-| Events logged | **3,919** |
-| Of which pre-listing config flips | **2,927** |
-| Distinct tokens seen | **2,034** |
-| Period covered | **2026-05-02 → 2026-08-07** (98 days) |
+| Events logged | **4,005** |
+| Of which pre-listing config flips | **3,013** |
+| Distinct tokens seen | **2,035** |
+| Period covered | **2026-05-02 → 2026-08-09** (99 days) |
 | Average | ~40 events/day |
 | Polling interval | **300 s** (5 minutes), per exchange |
 | Published with a delay of | **24h** (the live feed is the paid product) |
@@ -31,9 +31,9 @@ Counted directly from `data/listing_events.jsonl` — rerun
 | Source | Events |
 |---|---|
 | `coin_config.mexc` | 1,232 |
-| `coin_config.gate` | 946 |
+| `coin_config.gate` | 1,030 |
 | `coinbase` | 572 |
-| `coin_config.kucoin` | 415 |
+| `coin_config.kucoin` | 417 |
 | `coin_config.binance` | 334 |
 | `okx` | 178 |
 | `bybit` | 150 |
