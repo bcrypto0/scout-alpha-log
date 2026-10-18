@@ -21,10 +21,10 @@ Counted directly from `data/listing_events.jsonl` — rerun
 <!--STATS-->
 | | |
 |---|---|
-| Events logged | **12,450** |
-| Of which pre-listing config flips | **11,096** |
-| Distinct tokens seen | **2,737** |
-| Period covered | **2026-05-02 → 2026-10-16** (167 days) |
+| Events logged | **12,667** |
+| Of which pre-listing config flips | **11,307** |
+| Distinct tokens seen | **2,746** |
+| Period covered | **2026-05-02 → 2026-10-17** (168 days) |
 | Average | ~75 events/day |
 | Polling interval | **300 s** (5 minutes), per exchange |
 | Published with a delay of | **24h** (the live feed is the paid product) |
@@ -33,16 +33,16 @@ Counted directly from `data/listing_events.jsonl` — rerun
 
 | Source | Events |
 |---|---|
-| `coin_config.gate` | 8,275 |
-| `coin_config.mexc` | 1,396 |
+| `coin_config.gate` | 8,479 |
+| `coin_config.mexc` | 1,401 |
 | `coin_config.binance` | 794 |
-| `coin_config.kucoin` | 631 |
+| `coin_config.kucoin` | 633 |
 | `coinbase` | 605 |
-| `okx` | 316 |
-| `bybit` | 271 |
+| `okx` | 319 |
+| `bybit` | 273 |
 | `upbit` | 92 |
 | `binance` | 49 |
-| `bithumb` | 21 |
+| `bithumb` | 22 |
 <!--/STATS-->
 
 The `coin_config.*` sources are the pre-listing watcher (deposit/withdraw state
@@ -75,7 +75,7 @@ they are logged for context and to make announcement timing checkable.
 a coin's deposits from off to on — `previous_deposit_enable: false` →
 `deposit_enable: true`. **That transition alone is the test.** The withdrawal
 flags are recorded in every row for context and are *not* part of it. In this
-log <!--WOPEN-->**10,732 of 11,096 flagged rows (97%) have withdrawals open**<!--/WOPEN-->,
+log <!--WOPEN-->**10,943 of 11,307 flagged rows (97%) have withdrawals open**<!--/WOPEN-->,
 so do not read the flag as "deposits on, withdrawals shut" — the sample row
 above is the typical case, not the exception.
 
